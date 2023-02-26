@@ -4,10 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e793437d-8f6d-471a-9e70-8217d04063dc" name="Changes" comment="">
+    <list default="true" id="e793437d-8f6d-471a-9e70-8217d04063dc" name="Changes" comment="Execption error thrown">
+      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Steps/HomePagePermissions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Steps/LoginPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Steps/MobileCaps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Steps/ReorderCycle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestRunner/RunTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/appiumBasics/RunWebApplicationOnEmulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/appiumBasics/RunWebApplicationOnEmulator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/appiumBasics/RunWebApplicationOnEmulator.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,18 +62,54 @@
       <recent name="C:\Users\Mody\IdeaProjects\appiumProject" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="RunWebApplicationOnEmulator.OpenWebApplication" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.RunTests.ReorderCycleTest">
+    <configuration name="RunTests.LoginCycleTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="appiumProject" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="appiumBasics.*" />
+          <option name="PATTERN" value="TestRunner.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="appiumBasics" />
-      <option name="MAIN_CLASS_NAME" value="appiumBasics.RunWebApplicationOnEmulator" />
+      <option name="MAIN_CLASS_NAME" value="TestRunner.RunTests" />
+      <option name="METHOD_NAME" value="LoginCycleTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RunTests.OpenWebApplication" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="appiumProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="TestRunner.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="appiumBasics" />
+      <option name="MAIN_CLASS_NAME" value="TestRunner.RunTests" />
       <option name="METHOD_NAME" value="OpenWebApplication" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RunTests.ReorderCycleTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="appiumProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="TestRunner.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="TestRunner" />
+      <option name="MAIN_CLASS_NAME" value="TestRunner.RunTests" />
+      <option name="METHOD_NAME" value="ReorderCycleTest" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -76,7 +119,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.RunWebApplicationOnEmulator.OpenWebApplication" />
+        <item itemvalue="TestNG.RunTests.ReorderCycleTest" />
+        <item itemvalue="TestNG.RunTests.LoginCycleTest" />
+        <item itemvalue="TestNG.RunTests.OpenWebApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -89,6 +134,14 @@
       <option name="presentableId" value="Default" />
       <updated>1676389427671</updated>
     </task>
+    <task id="LOCAL-00001" summary="Execption error thrown">
+      <created>1677173834928</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1677173834928</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -101,5 +154,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Execption error thrown" />
+    <option name="LAST_COMMIT_MESSAGE" value="Execption error thrown" />
   </component>
 </project>
