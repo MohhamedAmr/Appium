@@ -18,15 +18,16 @@ public class RunWebApplicationOnEmulator {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         //capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-        capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
+        //capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "MODY");
        capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,"com.mnasat.nashmi.presentation.authentication.loginandsignup.UserLoginAndSignupActivity");
         capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE,"com.mnasat.nashmi");
         //capabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\Mody\\IdeaProjects\\appiumProject\\shgardi_User_v4.7.apk");
+        //capabilities.setCapability(AndroidMobileCapabilityType.);
         //WebDriverManager.chromedriver().setup();
         //capabilities.setCapability("chromedriverExecutable" ,WebDriverManager.chromedriver().getDownloadedDriverPath() );
-       AndroidDriver driver = new AndroidDriver(new URL ("http://127.0.0.1:4723/wd/hub") , capabilities);
+       AndroidDriver driver = new AndroidDriver(new URL ("http://127.0.1.1:4723/wd/hub") , capabilities);
 
 
     }
