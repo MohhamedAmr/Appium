@@ -1,5 +1,6 @@
 package TestRunner;
 
+import Steps.HomePagePermissions;
 import Steps.LoginPage;
 
 import Steps.ReorderCycle;
@@ -17,9 +18,11 @@ public class RunTests {
 
     new LoginPage(driver).loginCycleTest();
 
+
     }
     @Test
 public void ReorderCycleTest() throws MalformedURLException {
-        new ReorderCycle(driver).ReorderCycle();
+
+        new ReorderCycle(driver).ReorderCycleTest();
 }
 }

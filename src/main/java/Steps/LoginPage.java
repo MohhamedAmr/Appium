@@ -2,18 +2,12 @@ package Steps;
 
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.concurrent.TimeUnit;
 
-public class LoginPage {
-    private AndroidDriver driver;
+public class LoginPage extends PageBase {
 
-    private String url = "http://127.0.0.1:4723/wd/hub";
+
     private By getCountryCodeId = By.id("tvCountryCodeNumber");
     private By getSkipButtonId = By.id("tvSkip");
     private By getEgyptCountryCodeId = By.id("textView68");
@@ -22,67 +16,60 @@ public class LoginPage {
     private By getPasswordFieldId = By.id("etNewPassword");
     private By getLoginButtonId = By.id("btnLogin");
 
-    private By getBannerDismissButton = By.id("text_header");
+    private By getBannerDismissButton = By.id("com_braze_inappmessage_modal_close_button");
 
-    protected void waitForVisibilityOf(By locator) {
-        WebDriverWait wait = new WebDriverWait(driver, 30);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(locator)); }
 
-    public LoginPage(AndroidDriver driver){
-        this.driver=driver;
+    public LoginPage(AndroidDriver driver) {
+        super(driver);
     }
-    public void clickBannerDismissButton(){
 
-       implicityWait();
+    public void clickBannerDismissButton() {
+
+        PageBase.waitForVisibilityOf(getBannerDismissButton);
         driver.findElement(getBannerDismissButton).click();
     }
 
-     public void sendURL() throws MalformedURLException {
-         MobileCaps caps = new MobileCaps();
-         driver = new AndroidDriver(new URL(url) , caps.UserCaps());
-     }
+
     public void loginAfterSplash(String number) {
         driver.findElement(getPhoneNumberFieldId).sendKeys(number);
         driver.findElement(getContinueButtonId).click();
 
     }
-    public void implicityWait(){
-        driver.manage().timeouts().implicitlyWait(20 , TimeUnit.SECONDS);
-    }
-    public void loginLastStep (String password){
+
+    public void loginLastStep(String password) {
         driver.findElement(getPasswordFieldId).sendKeys(password);
         driver.findElement(getLoginButtonId).click();
 
     }
 
-        public void clickOnSkipButton(){
-            driver.findElement(getSkipButtonId).click();
-        }
+    public void clickOnSkipButton() {
+        driver.findElement(getSkipButtonId).click();
+    }
 
-        public void clickOnCountryCodeLabel(){
-            driver.findElement(getCountryCodeId).click();
-        }
-        public void clickOnEgyptLabel(){
-            driver.findElement(getEgyptCountryCodeId).click();
-        }
-        public void loginCycleTest() throws MalformedURLException {
-            LoginPage loginPage = new LoginPage(driver);
-            loginPage.sendURL();
-            loginPage.implicityWait();
-            loginPage.clickOnSkipButton();
+    public void clickOnCountryCodeLabel() {
+        driver.findElement(getCountryCodeId).click();
+    }
 
-            //loginPage.clickBannerDismissButton();
-            loginPage.clickOnCountryCodeLabel();
-            loginPage.clickOnEgyptLabel();
-            //loginPage.implicityWait();
+    public void clickOnEgyptLabel() {
+        driver.findElement(getEgyptCountryCodeId).click();
+    }
 
-            loginPage.loginAfterSplash("01271022279");
-            loginPage.loginLastStep("123456");
+    public void loginCycleTest() throws MalformedURLException {
+        LoginPage loginPage = new LoginPage(driver);
+        new PageBase(driver).sendURL();
+        new PageBase(driver).implicitWait();
+        loginPage.clickOnSkipButton();
+        //loginPage.clickBannerDismissButton();
+        loginPage.clickOnCountryCodeLabel();
+        loginPage.clickOnEgyptLabel();
+        loginPage.loginAfterSplash("01271022279");
+        loginPage.loginLastStep("123456");
+        PageBase.implicitWait();
 
-
-        }
 
     }
+
+}
 
 
 
