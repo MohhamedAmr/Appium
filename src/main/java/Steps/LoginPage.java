@@ -1,11 +1,13 @@
 package Steps;
 
+import dataHolder.AndroidDriverManager;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 
 import java.net.MalformedURLException;
+import java.net.URL;
 
-public class LoginPage extends PageBase {
+public class LoginPage extends BasePage{
 
 
     private By getCountryCodeId = By.id("tvCountryCodeNumber");
@@ -19,13 +21,8 @@ public class LoginPage extends PageBase {
     private By getBannerDismissButton = By.id("com_braze_inappmessage_modal_close_button");
 
 
-    public LoginPage(AndroidDriver driver) {
-        super(driver);
-    }
-
     public void clickBannerDismissButton() {
-
-        PageBase.waitForVisibilityOf(getBannerDismissButton);
+        waitForVisibilityOf(getBannerDismissButton);
         driver.findElement(getBannerDismissButton).click();
     }
 
@@ -55,16 +52,16 @@ public class LoginPage extends PageBase {
     }
 
     public void loginCycleTest() throws MalformedURLException {
-        LoginPage loginPage = new LoginPage(driver);
-        new PageBase(driver).sendURL();
-        new PageBase(driver).implicitWait();
+        LoginPage loginPage = new LoginPage();
+       // new BasePage(driver).sendURL();
+        loginPage.implicitWait();
         loginPage.clickOnSkipButton();
         //loginPage.clickBannerDismissButton();
         loginPage.clickOnCountryCodeLabel();
         loginPage.clickOnEgyptLabel();
         loginPage.loginAfterSplash("01271022279");
         loginPage.loginLastStep("123456");
-        PageBase.implicitWait();
+        BasePage.implicitWait();
 
 
     }

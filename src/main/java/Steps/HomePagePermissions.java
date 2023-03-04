@@ -3,22 +3,22 @@ package Steps;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 
-public class HomePagePermissions extends PageBase {
+public class HomePagePermissions extends BasePage {
     private By takeLocationPermissionWhileUsingTheApp = By.id("permission_allow_foreground_only_button");
     private By takeAllowNotificationPermission = By.id("permission_allow_button");
 
 
-    public HomePagePermissions(AndroidDriver driver) {
-        super(driver);
+    public HomePagePermissions() {
+        super();
     }
 
     public void AcceptAllPermission() {
 
 
-        PageBase pageBase = new PageBase(driver);
-        pageBase.waitForVisibilityOf(takeLocationPermissionWhileUsingTheApp);
+        BasePage basePage = new BasePage();
+        basePage.waitForVisibilityOf(takeLocationPermissionWhileUsingTheApp);
         driver.findElement(takeLocationPermissionWhileUsingTheApp).click();
-        pageBase.waitForVisibilityOf(takeAllowNotificationPermission);
+        basePage.waitForVisibilityOf(takeAllowNotificationPermission);
         driver.findElement(takeAllowNotificationPermission).click();
 
 

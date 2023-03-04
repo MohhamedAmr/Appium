@@ -1,13 +1,13 @@
 package Steps;
 
-import io.appium.java_client.MobileDriver;
+import dataHolder.AndroidDriverManager;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 
 import java.net.MalformedURLException;
 
-public class ReorderCycle extends PageBase {
-    //    private AndroidDriver driver;
+public class ReorderCycle {
+    private AndroidDriver driver = AndroidDriverManager.getInstance().getDriver();
     private By getReorderButtonIdFromHome = By.id("reorder");
     private By getOkButtonIdAfterTapReorder = By.id("btnConfirmDelete");
     private By getProceedToCheckoutButtonId = By.id("cl_proceed_checkout");
@@ -16,12 +16,10 @@ public class ReorderCycle extends PageBase {
 
     private By confirmSimilarLocationSheet = By.id("btnConfirm");
 
-    public ReorderCycle(AndroidDriver driver) {
-        super(driver);
-    }
 
     public void ClickReorder() {
         // waitForVisibilityOf(getReorderButtonIdFromHome);
+
         driver.findElement(getReorderButtonIdFromHome).click();
 
     }
@@ -50,10 +48,10 @@ public class ReorderCycle extends PageBase {
     }
 
     public void ReorderCycleTest() throws MalformedURLException {
-        new LoginPage(driver).loginCycleTest();
+        new LoginPage().loginCycleTest();
 
         //new HomePagePermissions(driver).AcceptAllPermission();
-        ReorderCycle reorderCycle = new ReorderCycle(driver);
+        ReorderCycle reorderCycle = new ReorderCycle();
         reorderCycle.ClickConfrimSimilarLocation();
         reorderCycle.ClickReorder();
         reorderCycle.ClickOkButton();
