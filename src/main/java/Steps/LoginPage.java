@@ -64,7 +64,7 @@ public class LoginPage extends PageBase {
         loginPage.clickOnEgyptLabel();
         loginPage.loginAfterSplash("01271022279");
         loginPage.loginLastStep("123456");
-        PageBase.implicitWait();
+        //PageBase.implicitWait();
 
 
     }
